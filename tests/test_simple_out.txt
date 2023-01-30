@@ -1,0 +1,24 @@
+for
+(
+int
+IDENTIFIER: i
+=
+INTEGER: 0
+;
+IDENTIFIER: i
+<
+IDENTIFIER: LENGTH
+;
+IDENTIFIER: i
+=
+IDENTIFIER: i
++
+INTEGER: 1
+)
+IDENTIFIER: a
+[
+IDENTIFIER: i
+]
+=
+DOUBLE: 0
+;

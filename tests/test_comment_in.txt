@@ -1,0 +1,6 @@
+// hello
+i = 12; // hello i = 34;
+/* hello */
+i = 56; /* hello
+hello
+hello */ i = 78;

@@ -1,0 +1,366 @@
+int
+IDENTIFIER: main
+(
+int
+IDENTIFIER: argc
+,
+char
+*
+*
+IDENTIFIER: argv
+)
+{
+if
+(
+IDENTIFIER: argc
+<
+INTEGER: 1
+||
+IDENTIFIER: argc
+>
+INTEGER: 2
+)
+{
+IDENTIFIER: cout
+<
+<
+STRING: "Usage: "
+<
+<
+IDENTIFIER: argv
+[
+INTEGER: 0
+]
+<
+<
+STRING: "  or "
+<
+<
+IDENTIFIER: argv
+[
+INTEGER: 0
+]
+<
+<
+STRING: " <filename>"
+<
+<
+IDENTIFIER: endl
+;
+return
+INTEGER: 1
+;
+}
+if
+(
+IDENTIFIER: argc
+==
+INTEGER: 1
+)
+{
+IDENTIFIER: string
+IDENTIFIER: original
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Please input a string to watch its magic: "
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: getline
+(
+IDENTIFIER: cin
+,
+IDENTIFIER: original
+)
+;
+while
+(
+Unrecognized character: !
+IDENTIFIER: cin
+.
+IDENTIFIER: eof
+(
+)
+)
+{
+IDENTIFIER: PowerString
+IDENTIFIER: magic
+(
+IDENTIFIER: original
+)
+;
+IDENTIFIER: cout
+<
+<
+STRING: "The original string you type is: "
+;
+IDENTIFIER: magic
+.
+IDENTIFIER: print
+(
+)
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Reverse of the string (using a loop): "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: rev_loop
+(
+)
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Reverse of the string (using recursion): "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: rev_recursion
+(
+)
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Reverse of the string (using a stack): "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: rev_stack
+(
+)
+<
+<
+IDENTIFIER: endl
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+IDENTIFIER: boolalpha
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Is \" "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: getString
+(
+)
+<
+<
+STRING: " \" a palindrome? "
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Calling member function to decide, the answer is: "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: isPalindrome
+(
+)
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Using recursion to decide, the answer is: "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: isPalindrome_recursion
+(
+)
+<
+<
+IDENTIFIER: endl
+<
+<
+IDENTIFIER: endl
+;
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Make odd palindrome string: "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: oddPalindrome
+(
+)
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Make even palindrome string: "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: evenPalindrome
+(
+)
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+IDENTIFIER: endl
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: cout
+<
+<
+STRING: "Please input a string to watch its magic: "
+<
+<
+IDENTIFIER: endl
+;
+IDENTIFIER: getline
+(
+IDENTIFIER: cin
+,
+IDENTIFIER: original
+)
+;
+}
+return
+INTEGER: 0
+;
+}
+else
+{
+IDENTIFIER: string
+IDENTIFIER: original
+;
+IDENTIFIER: ifstream
+IDENTIFIER: inFile
+;
+IDENTIFIER: inFile
+.
+IDENTIFIER: open
+(
+IDENTIFIER: argv
+[
+INTEGER: 1
+]
+)
+;
+if
+(
+Unrecognized character: !
+IDENTIFIER: inFile
+.
+IDENTIFIER: good
+(
+)
+)
+{
+IDENTIFIER: cout
+<
+<
+STRING: "File open failure!"
+<
+<
+IDENTIFIER: endl
+;
+return
+INTEGER: 1
+;
+}
+IDENTIFIER: cout
+<
+<
+STRING: "Display each text line from the file in original order, then "
+STRING: "followed by the reverse order: "
+<
+<
+IDENTIFIER: endl
+;
+while
+(
+IDENTIFIER: getline
+(
+IDENTIFIER: inFile
+,
+IDENTIFIER: original
+)
+)
+{
+IDENTIFIER: PowerString
+IDENTIFIER: magic
+(
+IDENTIFIER: original
+)
+;
+IDENTIFIER: magic
+.
+IDENTIFIER: print
+(
+)
+;
+IDENTIFIER: cout
+<
+<
+STRING: "--> "
+<
+<
+IDENTIFIER: magic
+.
+IDENTIFIER: rev_loop
+(
+)
+<
+<
+IDENTIFIER: endl
+;
+}
+IDENTIFIER: inFile
+.
+IDENTIFIER: close
+(
+)
+;
+return
+INTEGER: 0
+;
+}
+}
